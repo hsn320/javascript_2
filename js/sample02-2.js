@@ -32,4 +32,16 @@ addTodoItemBtn.addEventListener("click", () => {
         deleteTodoItemBtns.closest("li").remove();
     });
 
+    // edit-todo
+    const editTodoItemBtn  = todo.querySelector("li:last-child .edit-todo");
+    // .edit-todo click event
+    editTodoItemBtn.addEventListener("click", () => {
+        // 入力テキストの取り出し
+        let text = (editTodoItemBtn.closest("li").textContent).split("\n")[ 0 ];
+        // テキストボックスの挿入
+        editTodoItemBtn.closest("li").insertAdjacentHTML("afterbegin",
+            `<input type="text" value="${ text }">`
+        );
+    });
+
 });  // add-todo click event
