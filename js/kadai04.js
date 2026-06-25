@@ -90,15 +90,20 @@ todoItemWrap.addEventListener("click", (e) => {
     if (!target.classList.contains("remove")) return;
 
     const row = target.closest("tr");
-    const text = row.querySelector(".comment").textContent;
 
-    todoData = todoData.filter(item => item !== text);
+    row.remove();
+    todoData = [];
+
+    const todoItems = todoItemWrap.querySelectorAll("tr");
+    todoItems.forEach((item) => {
+        todoData.push(
+            item.querySelector(".comment").textContent
+        );
+    });
 
     localStorage.setItem(
         storageKey,
         JSON.stringify(todoData)
     );
-
-    row.remove();
 
 });
