@@ -1,0 +1,1 @@
+const SAMPLE08_URL = "http://click.ecc.ac.jp/ecc/huemori/php1/sample08-1.php";
